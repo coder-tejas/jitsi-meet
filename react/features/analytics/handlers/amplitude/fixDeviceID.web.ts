@@ -24,8 +24,6 @@ export function fixDeviceID(amplitude: Types.BrowserClient) {
             amplitude.setDeviceId(JSON.parse(deviceId));
         } catch (error) {
             logger.error('Failed to set device ID in Amplitude', error);
-
-            return Promise.resolve(false);
         }
     } else {
         const newDeviceId = amplitude.getDeviceId();
